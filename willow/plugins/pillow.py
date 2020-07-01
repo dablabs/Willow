@@ -99,6 +99,7 @@ class PillowImage(Image):
         if progressive:
             kwargs['progressive'] = True
 
+        kwargs['subsampling'] = 0 # highest quality
         kwargs['icc_profile'] = image.info.get('icc_profile')
 
         image.save(f, 'JPEG', quality=quality, **kwargs)
