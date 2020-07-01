@@ -86,7 +86,7 @@ class PillowImage(Image):
         return PillowImage(new_image.convert('RGB'))
 
     @Image.operation
-    def save_as_jpeg(self, f, quality=85, optimize=False, progressive=False):
+    def save_as_jpeg(self, f, quality=85, optimize=True, progressive=False):
         if self.image.mode in ['1', 'P']:
             image = self.image.convert('RGB')
         else:
